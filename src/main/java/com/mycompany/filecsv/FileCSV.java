@@ -14,11 +14,17 @@ public class FileCSV {
        File file = new File("./data.csv");
        ReadFile readFile = new ReadFile(file);
        List<String> data = readFile.loadData();
+       String [] splited = new String[4];
+       String [][] arraySplited = new String [4][3];
        
+       readFile.ficheroWriter(file, true);
+       int i=0;
        for(String line: data){
-           String [] splited = new String[4];
            splited = line.split(";");
-           System.out.println("Hola " +splited[0]+ " " + splited[1] +" " +splited[2] + " "+ splited[3]);
+           arraySplited[i][0]= splited[0];
+           arraySplited[i][1]= splited[0];
+           arraySplited[i][2]= splited[0];
+           System.out.println("Hola " +splited[0]+ " " + splited[1] +" " +splited[2]);
        }
     }
 }

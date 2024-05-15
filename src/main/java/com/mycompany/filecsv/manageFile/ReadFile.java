@@ -5,7 +5,9 @@ package com.mycompany.filecsv.manageFile;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +43,17 @@ public class ReadFile {
             }
         }
         return data;
+    }
+
+    public void ficheroWriter(File file, boolean value) throws IOException {
+        String array[] = {"Keiner","Ballesteros","192197", "918213082"};
+        FileWriter writer = new FileWriter(file,value);
+        PrintWriter pw = new PrintWriter(writer);
+        for(String arr : array){
+            pw.print(arr+";");
+        }
+        pw.close();
+        System.out.println("Ya escribio");
     }
     
 }
